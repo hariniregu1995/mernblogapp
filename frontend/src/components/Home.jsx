@@ -13,7 +13,7 @@ const Home = () => {
 const [blogs,setBlogs]=useState([]);
 let token=localStorage.getItem('token');
 useEffect(()=>{
-    axios.get('http://localhost:4000/blog/')
+    axios.get('api/blog/')
     .then((res)=>{
         setBlogs(res.data)
     })
@@ -25,7 +25,7 @@ useEffect(()=>{
 
 //function for deletion
 let deleteBlog=(id)=>{
- axiosInstance.delete('http://localhost:4000/blog/blogremoval/'+id)
+ axiosInstance.delete('/blog/blogremoval/'+id)
  .then((res)=>{
    window.location.reload();
  })
