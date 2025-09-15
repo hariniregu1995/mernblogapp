@@ -17,7 +17,7 @@ const Add = () => {
   }
   function submitInfo() {
     if(location.state!=null){
-      axiosInstance.put('http://localhost:4000/blog/blogupdation/'+location.state.blog._id,form)
+      axiosInstance.put('/blog/blogupdation/'+location.state.blog._id,form)
       .then((res)=>{
         alert('updated')
         navigate('/')
@@ -29,7 +29,7 @@ const Add = () => {
 
     }else{
       //for adding a new blog 
-      axiosInstance.post('http://localhost:4000/blog/newblog',form).then((res)=>{
+      axiosInstance.post('/blog/newblog',form).then((res)=>{
         navigate('/')
       }).catch((error)=>{
         console.log(error)
